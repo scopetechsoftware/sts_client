@@ -1,18 +1,44 @@
 {
   "files": {
-    "main.css": "/sts_client/static/css/main.caf026bb.css",
-    "main.js": "/sts_client/static/js/main.0093435a.js",
+    "main.css": "/sts_client/static/css/main.d998eebb.css",
+    "main.js": "/sts_client/static/js/main.3d7051db.js",
     "static/media/Unconfirmed 361160.png": "/sts_client/static/media/Unconfirmed 361160.e1d3b71833fb6c23ba09.png",
     "static/media/embed.jpg": "/sts_client/static/media/embed.ec5dcb71700bb04c4f12.jpg",
+    "static/media/digitalMarget.png": "/sts_client/static/media/digitalMarget.67660a4a97c0e32415fc.png",
     "static/media/resin.jpg": "/sts_client/static/media/resin.74f1fa962bc15e34d09a.jpg",
     "static/media/tally.jpg": "/sts_client/static/media/tally.5a4e68d71cbac46d85af.jpg",
+    "static/media/webdesing.png": "/sts_client/static/media/webdesing.5b295657d399ad519949.png",
     "static/media/basic.jpg": "/sts_client/static/media/basic.24154520ef2ffdcc304f.jpg",
+    "static/media/AI.png": "/sts_client/static/media/AI.63c0a5c5caf5b8ac4b21.png",
+    "static/media/phpLaraval.png": "/sts_client/static/media/phpLaraval.bf747719d8a2f2a37f93.png",
+    "static/media/parttime.png": "/sts_client/static/media/parttime.9bb548edfd3b34d7aca5.png",
+    "static/media/resinart.jpg": "/sts_client/static/media/resinart.0671fbb1c69c032f60ea.jpg",
+    "static/media/newwhat.png": "/sts_client/static/media/newwhat.90f2c92dde6f43507e52.png",
+    "static/media/fullstack.png": "/sts_client/static/media/fullstack.8986e8a97df908e19399.png",
+    "static/media/photoshop.jpg": "/sts_client/static/media/photoshop.86c3e8f46ad98bf7d81a.jpg",
+    "static/media/javaspring.png": "/sts_client/static/media/javaspring.4bc60cb901228aba60c2.png",
+    "static/media/tallyGst.png": "/sts_client/static/media/tallyGst.413351fe692757c7a7bf.png",
+    "static/media/pythonDjango.png": "/sts_client/static/media/pythonDjango.100a16bcc8cecd40d9aa.png",
+    "static/media/php.png": "/sts_client/static/media/php.05441bbf7e2004853904.png",
+    "static/media/shruthika.png": "/sts_client/static/media/shruthika.f6b01e09ec0021090ab3.png",
+    "static/media/sankar manoj.png": "/sts_client/static/media/sankar manoj.2daffc248c4b69d662b0.png",
+    "static/media/applicationProject.jpg": "/sts_client/static/media/applicationProject.d025dc84d7ead1115efe.jpg",
+    "static/media/finalyear.png": "/sts_client/static/media/finalyear.6007d5df05ac9aad16e0.png",
+    "static/media/c-c++.png": "/sts_client/static/media/c-c++.27b54ec86b5070f2b317.png",
+    "static/media/spoken english.png": "/sts_client/static/media/spoken english.f8f30b88500dcf8d849e.png",
+    "static/media/agustin.png": "/sts_client/static/media/agustin.e71704c431b1a775d849.png",
+    "static/media/fullstackmern.webp": "/sts_client/static/media/fullstackmern.2525272196bb45e7f7b1.webp",
+    "static/media/java.png": "/sts_client/static/media/java.fc241426afd8f52a312e.png",
+    "static/media/tallyim.png": "/sts_client/static/media/tallyim.727731859aaaa8877f16.png",
+    "static/media/pythonPRogramming.png": "/sts_client/static/media/pythonPRogramming.02b7bcd872bba54636a9.png",
+    "static/media/narmatha narayanan.png": "/sts_client/static/media/narmatha narayanan.492379fa881487bb2f14.png",
+    "static/media/review 1.png": "/sts_client/static/media/review 1.1b1f18cab32b439d0f51.png",
     "index.html": "/sts_client/index.html",
-    "main.caf026bb.css.map": "/sts_client/static/css/main.caf026bb.css.map",
-    "main.0093435a.js.map": "/sts_client/static/js/main.0093435a.js.map"
+    "main.d998eebb.css.map": "/sts_client/static/css/main.d998eebb.css.map",
+    "main.3d7051db.js.map": "/sts_client/static/js/main.3d7051db.js.map"
   },
   "entrypoints": [
-    "static/css/main.caf026bb.css",
-    "static/js/main.0093435a.js"
+    "static/css/main.d998eebb.css",
+    "static/js/main.3d7051db.js"
   ]
 }
