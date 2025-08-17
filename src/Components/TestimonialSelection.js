@@ -1,29 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
+import pratheep from '../Assets/review 1.png';
+import narmatha from '../Assets/narmatha narayanan.png';
+import krithick from '../Assets/krithick.png';
 
 export default function TestimonialSection() {
   const testimonials = [
     {
-      name: "Arun Kumar",
-      role: "Software Engineer @ Infosys",
-      photo: "https://randomuser.me/api/portraits/men/11.jpg",
-      text: "STS helped me gain real-world project experience. The faculty is excellent, and the placement support is outstanding.",
+      name: "Pratheep",
+      role: "",
+      photo: pratheep,
+      text: `I completed a C and C++ programming course at Scope Tech Software Solution, Madurai.
+The course was well-structured and suitable for both beginners and those with basic programming knowledge.
+The trainers explained core concepts like loops, arrays, functions, pointers, OOPs (in C++) clearly with real-time examples.
+We also worked on mini-projects and coding tasks, which helped me gain practical experience.
+The learning environment was supportive and interactive.
+Overall, it was a great experience and I would recommend this course to anyone looking to build a strong foundation in programming.`,
       rating: 5,
     },
     {
-      name: "Priya Sharma",
-      role: "Frontend Developer @ TCS",
-      photo: "https://randomuser.me/api/portraits/women/22.jpg",
-      text: "The courses are practical and industry-focused. I loved the hands-on projects and the guidance I received.",
+      name: "Narmatha Narayanan",
+      role: "",
+      photo: narmatha,
+      text: `My internship at [scope tech software solutions] was a great learning experience. The team was supportive, and I got hands-on exposure to real-time projects. I improved my technical and communication skills. The work culture was professional and friendly. Overall, it was a valuable step towards my career development.`,
       rating: 4,
     },
     {
-      name: "Vignesh R",
-      role: "Embedded Systems Engineer @ Wipro",
-      photo: "https://randomuser.me/api/portraits/men/33.jpg",
-      text: "The best institute in Madurai! Great mentors, excellent learning atmosphere, and real-time project exposure.",
+      name: "KRITHICK SELVAN",
+      role: "",
+      photo: krithick,
+      text: `I’m extremely satisfied with the learning experience. The instructors were knowledgeable, patient, and explained every concept clearly—from the basics to more advanced techniques. The course structure was well-organized, with plenty of hands-on practice that helped me gain confidence in using the photoshop software effectively.`,
       rating: 5,
     },
   ];
+
+  // Track expanded/collapsed state per testimonial
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const toggleExpand = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
 
   return (
     <>
@@ -39,7 +54,7 @@ export default function TestimonialSection() {
           font-size: 2.5rem;
           font-weight: bold;
           margin-bottom: 40px;
-          color: #4f46e5;
+          color: #1F2661;
         }
         .testimonial-grid {
           display: grid;
@@ -67,7 +82,7 @@ export default function TestimonialSection() {
           border-radius: 50%;
           object-fit: cover;
           margin-bottom: 15px;
-          border: 3px solid #4f46e5;
+          border: 3px solid #1F2661;
         }
         .testimonial-name {
           font-size: 1.2rem;
@@ -83,8 +98,28 @@ export default function TestimonialSection() {
         .testimonial-text {
           font-size: 0.95rem;
           color: #374151;
-          margin-bottom: 15px;
+          margin-bottom: 10px;
+          display: -webkit-box;
+          -webkit-line-clamp: 5;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
+        .expanded {
+          -webkit-line-clamp: unset !important;
+          overflow: visible !important;
+        }
+        .show-more-btn {
+          background: none;
+          border: none;
+          color: #1F2661;
+          cursor: pointer;
+          font-size: 0.9rem;
+          padding: 0;
+        }
+           .show-more-btn:hover {
+            color: blue;
+           text-decoration: 1px solid underline;
+           }
         .stars {
           color: #fbbf24;
           font-size: 1rem;
@@ -92,19 +127,32 @@ export default function TestimonialSection() {
       `}</style>
 
       <section className="testimonial-section">
-        <h2 className="testimonial-heading">What Our Students Say</h2>
+        <h2 className="main-headline">What Our Students Say</h2>
         <div className="testimonial-grid">
-          {testimonials.map((t, index) => (
-            <div key={index} className="testimonial-card">
-              <img src={t.photo} alt={t.name} className="testimonial-photo" />
-              <h3 className="testimonial-name">{t.name}</h3>
-              <p className="testimonial-role">{t.role}</p>
-              <p className="testimonial-text">"{t.text}"</p>
-              <div className="stars">
-                {"★".repeat(t.rating)}{"☆".repeat(5 - t.rating)}
+          {testimonials.map((t, index) => {
+            const isExpanded = expandedIndex === index;
+            return (
+              <div key={index} className="testimonial-card">
+                <img src={t.photo} alt={t.name} className="testimonial-photo" />
+                <h3 className="testimonial-name">{t.name}</h3>
+                <p className="testimonial-role">{t.role}</p>
+                <p
+                  className={`testimonial-text ${isExpanded ? "expanded" : ""}`}
+                >
+                  {t.text}
+                </p>
+                <button
+                  className="show-more-btn"
+                  onClick={() => toggleExpand(index)}
+                >
+                  {isExpanded ? "Show Less" : "Show More"}
+                </button>
+                <div className="stars">
+                  {"★".repeat(t.rating)}{"☆".repeat(5 - t.rating)}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     </>

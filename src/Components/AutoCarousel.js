@@ -48,7 +48,7 @@ const AutoCarousel = () => {
         >
           {index === current && (
             <>
-              <img src={slide.image} alt={slide.heading} className="slide-image" style={{objectFit:' contain'}}/>
+              <img src={slide.image} alt={slide.heading} className="slide-image" style={{objectFit:' cover'}}/>
               <div className="overlay">
                 <h2>{slide.heading}</h2>
                 {slide.content && <p>{slide.content}</p>}

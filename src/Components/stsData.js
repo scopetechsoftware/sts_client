@@ -44,6 +44,25 @@ const stsQA = [
   { question: "hostel", answer: "🏠 We don’t provide hostel, but we can guide you to nearby PG accommodations." },
  {question: 'hi just want to know the fees details', answer: " Our course fees start from ₹5,000 for short-term programs to ₹35,000 for advanced courses. It depend on which course you choose"}
   // Default / fallback handled in chatbot.js
+  ,
+  { "question": "job guarantee", "answer": "✅ YES, we provide strong placement support with training & interviews to help you get a job." },
+  { "question": "job carentee", "answer": "✅ YES, we provide full placement guidance & opportunities till you get placed." },
+  { "question": "job guaranty", "answer": "✅ YES, we guide you with career support & placement assistance until you succeed." },
+  { "question": "will you provide job guarantee", "answer": "✅ YES, we stand with you through placement drives and career training until you get placed." },
+  { "question": "do u give job guarantee", "answer": "✅ YES, we provide 100% placement support and interview preparation." },
+  { "question": "is there job guarantee", "answer": "✅ YES, with our placement guidance & company connections, you have strong chances to get placed." },
+  { "question": "job surety", "answer": "✅ YES, we ensure placement support and career opportunities after course completion." },
+  { "question": "job security", "answer": "✅ YES, we prepare you with skills and placements so you can achieve job stability." },
+  { "question": "placement guarantee", "answer": "✅ YES, we provide complete placement assistance, training, and interview support." },
+  { "question": "placement assurence", "answer": "✅ YES, you get placement guidance & company connects till you land a job." },
+  { "question": "will i surely get a job", "answer": "✅ YES, with your performance + our placement support, you can surely get placed." },
+  { "question": "100% job guarantee", "answer": "✅ YES, we provide 100% placement assistance (training + interviews) for job success." },
+  { "question": "do you give job after course", "answer": "✅ YES, we support you with placement drives & company interviews after the course." },
+  { "question": "after course will i get job", "answer": "✅ YES, after the course we give placement guidance and interview opportunities." },
+  { "question": "job support after course", "answer": "✅ YES, you get full job support & placement training after finishing the course." },
+ 
+  {question: 'hi is sts provide job quarantee', answer: "ofcourse we give fully job quarantee and supporting you"}
+
 ];
 
 export default stsQA;

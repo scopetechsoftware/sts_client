@@ -21,7 +21,7 @@ export default function Footer() {
           font-size: 1.3rem;
           color: #fff;
           margin-bottom: 15px;
-          border-left: 4px solid #4f46e5;
+          border-left: 4px solid  #1F2661;
           padding-left: 8px;
         }
         .footer p {
@@ -38,7 +38,7 @@ export default function Footer() {
           transition: color 0.3s ease;
         }
         .footer-links a:hover {
-          color: #4f46e5;
+          color: #1F2661;
         }
         .social-icons {
           display: flex;
@@ -58,7 +58,7 @@ export default function Footer() {
           transition: all 0.3s ease;
         }
         .social-icons a:hover {
-          background: #4f46e5;
+          background:  #1F2661;
           transform: translateY(-3px);
         }
         .footer-bottom {
@@ -77,7 +77,7 @@ export default function Footer() {
           <div>
             <h3>STS Scope Tech</h3>
             <p>
-              STS Scope Tech Software Solutions, Madurai – Providing industry-standard training, real-time
+              STS, Madurai – Providing industry-standard training, real-time
               projects, and placement opportunities. We nurture talent in Full Stack Development, Embedded
               Systems, Creative Arts, and more.
             </p>
@@ -125,7 +125,7 @@ export default function Footer() {
 
         {/* Footer Bottom */}
         <div className="footer-bottom">
-          © {new Date().getFullYear()} STS Scope Tech Software Solutions | All Rights Reserved
+          © {new Date().getFullYear()} STS | All Rights Reserved
         </div>
       </footer>
     </>

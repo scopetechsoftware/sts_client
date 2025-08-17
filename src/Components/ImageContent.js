@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TwoColumnWithHeadline = ({
-  mainHeadline = "Welcome to STS Scope Tech",
+  mainHeadline = "Welcome to STS",
   imageSrc,
   smallHeadline = "Why Choose Us?",
   contentText = "We provide expert training and real-world projects to boost your career.",
   icon = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="#4f46e5"
+      fill="#1F2661"
       viewBox="0 0 24 24"
       width="24px"
       height="24px"
@@ -29,11 +30,13 @@ const TwoColumnWithHeadline = ({
         }
         .main-headline {
           text-align: center;
-          font-size: 2.75rem;
+          font-size: 2rem;
           font-weight: 700;
-          color: #1e293b;
+          color: #1F2661;
           margin-bottom: 3rem;
           opacity: 0;
+            text-transform: uppercase;
+
           animation: fadeSlideDown 1s forwards;
         }
         .two-column {
@@ -77,7 +80,7 @@ const TwoColumnWithHeadline = ({
           font-weight: 600;
           font-size: 1.5rem;
           margin-bottom: 1rem;
-          color: #4f46e5;
+          color: #1F2661;
         }
         .content-text {
           font-size: 1.125rem;
@@ -116,14 +119,14 @@ const TwoColumnWithHeadline = ({
             flex: 1 1 100%;
           }
           .main-headline {
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin-bottom: 2rem;
           }
         }
       `}</style>
 
       <div className="container">
-        <h1 className="main-headline">{mainHeadline}</h1>
+        <h2 className="main-headline">{mainHeadline}</h2>
         <div className="two-column">
           <div className="left-image">
             <img src={imageSrc} alt="Visual representation" />
@@ -134,6 +137,8 @@ const TwoColumnWithHeadline = ({
               {smallHeadline}
             </div>
             <p className="content-text">{contentText}</p>
+                  <p className='link'> <Link to={'/about'}>want to know more?</Link> </p>
+            
           </div>
         </div>
       </div>

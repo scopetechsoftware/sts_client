@@ -94,7 +94,7 @@
     left: -100%;
     width: 100%;
     flex-direction: column;
-    background-color: #0d6efd;
+    background-color: #1F2661;
     transition: left 0.3s ease-in-out;
     padding: 1rem 0;
   }
@@ -459,7 +459,7 @@
 
 .mv-card {
   flex: 1 1 300px;
-  background: linear-gradient(135deg, violet, blue);
+  background: linear-gradient(135deg, violet, #090978);
   color: white;
   padding: 20px;
   border-radius: 12px;
@@ -502,7 +502,7 @@
 
 .highlight-icon {
   font-size: 2.5rem;
-  color: blueviolet;
+  color: #1F2661;
   margin-bottom: 10px;
 }
 
@@ -525,3 +525,43 @@
 
 
 /* about page styling */
+
+/* all the links */
+
+.link {
+margin-top: 20px;
+margin-bottom: 20px;
+}
+.link a {
+  text-decoration: none;
+  background: #1F2661;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+.link a:hover {
+  background: #1525b7;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.45);
+
+} 
+
+  
+
+       .new-headline {
+          
+        text-align: center;
+          font-size: 2rem;
+          font-weight: 700;
+          color: #1F2661;
+          margin-bottom: 3rem;
+          margin-top: 3rem;
+            text-transform: uppercase;
+
+       }
+
+       .course-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+  transition: 0.3s all linear;
+}

@@ -1,5 +1,9 @@
 import React from "react";
 
+import application from '../Assets/applicationProject.jpg';
+import finalyear from '../Assets/finalyear.png';
+import parttime from '../Assets/parttime.png';
+
 export default function ProjectShowcase() {
   const sections = [
     {
@@ -12,8 +16,8 @@ export default function ProjectShowcase() {
         "Full source code with explanation",
         "Support for presentations & viva",
       ],
-      image:
-        "https://images.unsplash.com/photo-1581090700227-4c4f50b1a43f?auto=format&fit=crop&w=800&q=60",
+      image: finalyear,
+        
    
       reverse: false,
     },
@@ -29,7 +33,7 @@ export default function ProjectShowcase() {
       ],
      
       image:
-        "https://images.unsplash.com/photo-1581091870697-1c8c1b92c3db?auto=format&fit=crop&w=800&q=60",
+       application,
       reverse: true,
     },
     {
@@ -43,7 +47,7 @@ export default function ProjectShowcase() {
         "Boosts portfolio & employability",
       ],
       image: 
-        "https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=800&q=60",
+        parttime,
       reverse: false,
     },
   ];
@@ -71,7 +75,7 @@ export default function ProjectShowcase() {
           flex: 1 1 45%;
           overflow: hidden;
           border-radius: 15px;
-          box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+          filter:  drop-shadow(0 10px 5px rgba(0,0,0,0.1));
           transition: transform 0.5s ease;
         }
         .project-image img {
@@ -93,7 +97,7 @@ export default function ProjectShowcase() {
           font-size: 2rem;
           font-weight: bold;
           margin-bottom: 15px;
-          color: #4f46e5;
+          color: #1F2661;
         }
         .project-desc {
           font-size: 1.1rem;
@@ -115,7 +119,7 @@ export default function ProjectShowcase() {
           content: "✔";
           position: absolute;
           left: 0;
-          color: #4f46e5;
+          color: #1F2661;
           font-weight: bold;
         }
         /* Animation */

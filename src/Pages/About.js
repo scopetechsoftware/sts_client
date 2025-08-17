@@ -8,7 +8,7 @@ const About = () => {
       {/* Banner */}
       <div className="about-banner">
         <div className="about-banner-overlay">
-          <h1 className="about-banner-text">About STS Scope Tech Software Solutions</h1>
+          <h1 className="about-banner-text">About STS</h1>
         </div>
       </div>
 
@@ -18,7 +18,7 @@ const About = () => {
           <FaUniversity className="about-icon" /> Welcome to STS Madurai
         </h2>
         <p className="about-description">
-          <strong>STS Scope Tech Software Solutions</strong>, located in Madurai, is a leading 
+          <strong>STS</strong> located in Madurai, is a leading 
           training and skill development institute dedicated to bridging the gap between 
           education and industry needs. Since our inception, we have empowered hundreds of 
           students and professionals with hands-on learning, real-world projects, and 

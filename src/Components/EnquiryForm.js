@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 
 
@@ -52,10 +53,26 @@ export default function EnquiryForm() {
     validate()
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async(e) => {
+    try {
+        e.preventDefault();
     if (validate()) {
-      alert("Form submitted successfully!");
+      const enNextFollowUp = new Date().toISOString();
+      const newData = {
+        
+        enName: formData.name,
+    enMail: formData.email,
+    enMobile: formData.phone,
+    enCourse: formData.course,
+    enReference: "Through website",
+    enReferedStudent: "Website via enquiry",
+    enStatus: `${formData.message} there address is ${formData.location}`,
+    enNextFollowUp: enNextFollowUp
+      }
+     alert('hi');
+      await axios.post('https://sts-yyhy.onrender.com/api/enquiry', newData);
+
+      alert("We will contact you as soon as possible. Thankyou!");
       setShowForm(false);
       setFormData({
         name: "",
@@ -66,6 +83,11 @@ export default function EnquiryForm() {
         message: ""
       });
     }
+    } catch (error) {
+      console.log(error);
+      
+    }
+  
   };
 
   return (

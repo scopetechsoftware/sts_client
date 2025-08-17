@@ -1,53 +1,159 @@
 import React, { useRef, useEffect, useState } from "react";
+import photoshop from '../Assets/photoshop.jpg';
+import resinart from '../Assets/resinart.jpg';
+import digi from '../Assets/digitalMarget.png';
+import taGst from '../Assets/tallyGst.png';
+import fullstack from '../Assets/fullstack.png';
+import ai from '../Assets/AI.png';
+import pythonDjango from '../Assets/pythonDjango.png';
+import mern from '../Assets/fullstackmern.webp';
+import jspirng from '../Assets/javaspring.png';
+import phplara from '../Assets/phpLaraval.png';
+import webdesign from '../Assets/webdesing.png';
+import java from '../Assets/java.png';
+import php from '../Assets/php.png';
+import python from '../Assets/pythonPRogramming.png';
+import cc from '../Assets/c-c++.png';
+import ms from '../Assets/newwhat.png';
+import tally from '../Assets/tallyim.png';
+import sp from '../Assets/spoken english.png';
+
+
 
 const courses = [
+  // Business
   {
     id: 1,
-    title: "Python Training",
-    description: "Learn Python from basics to advanced concepts with hands-on projects.",
-    image:
-      "https://images.unsplash.com/photo-1581093588401-8b7b6b1abf34?auto=format&fit=crop&w=600&q=60",
+    type: "business",
+    title: "Photoshop",
+    description: "Learn professional photo editing, retouching, and graphic design with Adobe Photoshop.",
+    image: photoshop,
   },
   {
     id: 2,
-    title: "Java & C++",
-    description:
-      "Master Java and C++ programming for software development and problem solving.",
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=60",
+    type: "business",
+    title: "Resin Arts",
+    description: "Discover resin techniques to create stunning art pieces, jewelry, and décor products.",
+    image: resinart,
   },
   {
     id: 3,
-    title: "AI & Cybersecurity",
-    description:
-      "Get ahead in AI technologies and cybersecurity to protect and innovate.",
-    image:
-      "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?auto=format&fit=crop&w=600&q=60",
+    type: "business",
+    title: "Digital Marketing",
+    description: "Master SEO, social media, and online ads to grow businesses in the digital era.",
+    image: digi,
   },
+
+  // Professional
   {
     id: 4,
-    title: "Full Stack MERN",
-    description:
-      "Become a full stack developer using MongoDB, Express, React, and Node.js.",
-    image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=60",
+    type: "professional",
+    title: "Tally with GST",
+    description: "Gain expertise in accounting, GST filing, and financial management using Tally ERP.",
+    image: taGst,
   },
   {
     id: 5,
-    title: "Tally & Spoken English",
-    description: "Accounting with Tally and improve communication skills fluently.",
-    image:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=60",
+    type: "professional",
+    title: "Full Stack Development",
+    description: "Learn front-end, back-end, and databases to build complete web applications from scratch.",
+    image: fullstack,
   },
   {
     id: 6,
-    title: "Resin Arts & Drawing",
-    description:
-      "Explore creative resin art techniques and enhance your drawing skills.",
-    image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=60",
+    type: "professional",
+    title: "AI",
+    description: "Understand artificial intelligence, machine learning, and real-world AI applications.",
+    image: ai,
+  },
+  {
+    id: 7,
+    type: "professional",
+    title: "MERN",
+    description: "Master MongoDB, Express, React, and Node.js to create modern, scalable applications.",
+    image: mern,
+  },
+  {
+    id: 8,
+    type: "professional",
+    title: "Python Django",
+    description: "Develop secure and scalable web apps using Python and Django framework.",
+    image: pythonDjango,
+  },
+  {
+    id: 9,
+    type: "professional",
+    title: "Java Spring",
+    description: "Build enterprise-level applications with Java Spring Boot and REST APIs.",
+    image: jspirng,
+  },
+  {
+    id: 10,
+    type: "professional",
+    title: "PHP Laravel",
+    description: "Learn Laravel framework to create dynamic and secure PHP web applications.",
+    image: phplara,
+  },
+
+  // Basics
+  {
+    id: 11,
+    type: "basics",
+    title: "Web Design",
+    description: "Create responsive websites with HTML, CSS, and JavaScript basics.",
+    image: webdesign,
+  },
+  {
+    id: 12,
+    type: "basics",
+    title: "Java",
+    description: "Master Java programming for software development and problem solving.",
+    image: java,
+  },
+  {
+    id: 13,
+    type: "basics",
+    title: "PHP",
+    description: "Learn PHP to create dynamic websites and connect with databases.",
+    image: php,
+  },
+  {
+    id: 14,
+    type: "basics",
+    title: "Python",
+    description: "Build a strong foundation in Python for programming, automation, and AI.",
+    image: python,
+  },
+  {
+    id: 15,
+    type: "basics",
+    title: "C / C++",
+    description: "Master C and C++ for efficient coding, system programming, and logic building.",
+    image: cc,
+  },
+  {
+    id: 16,
+    type: "basics",
+    title: "MS Office",
+    description: "Gain hands-on skills in Word, Excel, and PowerPoint for office productivity.",
+    image: ms,
+  },
+  {
+    id: 17,
+    type: "basics",
+    title: "Tally",
+    description: "Learn accounting fundamentals and financial management with Tally software.",
+    image: tally,
+  },
+  {
+    id: 18,
+    type: "basics",
+    title: "Spoken English",
+    description: "Improve fluency, grammar, and communication skills for professional growth.",
+    image: sp,
   },
 ];
+
 
 export default function CourseCarousel() {
   const carouselRef = useRef(null);
@@ -225,7 +331,7 @@ export default function CourseCarousel() {
         .card-title {
           font-size: 1.3rem;
           font-weight: 700;
-          color: #4f46e5;
+          color: #1F2661;
           margin-bottom: 0.75rem;
         }
         .card-desc {
@@ -240,7 +346,7 @@ export default function CourseCarousel() {
           overflow: hidden;
           flex-shrink: 0;
           height: 160px;
-          box-shadow: 0 5px 15px rgba(79,70,229,0.2);
+          box-shadow: 0 5px 15px  rgba(31, 38, 97, 0.2);
           transition: transform 0.3s ease;
         }
         .card-image img {
@@ -257,7 +363,7 @@ export default function CourseCarousel() {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          background: rgba(79,70,229,0.8);
+          background:  rgba(31, 38, 97, 0.8);
           border: none;
           color: white;
           width: 40px;
@@ -273,7 +379,7 @@ export default function CourseCarousel() {
           user-select: none;
         }
         .arrow-btn:hover {
-          background: rgba(79,70,229,1);
+          background: #1F2661;
         }
         .arrow-left {
           left: -20px;

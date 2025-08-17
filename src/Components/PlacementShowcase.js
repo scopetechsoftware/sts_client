@@ -1,30 +1,31 @@
 import React from "react";
+import augustin from '../Assets/agustin.png';
+import sankar from '../Assets/sankar manoj.png';
+import shruti from '../Assets/shruthika.png';
+
 
 export default function PlacementShowcase() {
   const placements = [
     {
-      name: "Arun Kumar",
-      role: "Software Engineer",
-      company: "Infosys",
-      lpa: "6.5",
-      photo:
-        "https://randomuser.me/api/portraits/men/32.jpg",
+      name: "Agustin Durai J",
+      role: "Junior Developer",
+      company: "Strategic Industry Solutions",
+      lpa: "5",
+      photo: augustin,
     },
     {
-      name: "Priya Sharma",
-      role: "Frontend Developer",
+      name: "Sankar Manoj",
+      role: "Accentuate",
       company: "TCS",
-      lpa: "5.2",
-      photo:
-        "https://randomuser.me/api/portraits/women/44.jpg",
+      lpa: "2.35",
+      photo:sankar,
     },
     {
       name: "Vignesh R",
-      role: "Embedded Systems Engineer",
-      company: "Wipro",
-      lpa: "4.8",
-      photo:
-        "https://randomuser.me/api/portraits/men/67.jpg",
+      role: "Android Developer",
+      company: "Info career private limited",
+      lpa: "1.92",
+      photo:shruti,
     },
   ];
 
@@ -42,7 +43,7 @@ export default function PlacementShowcase() {
           font-size: 2.5rem;
           font-weight: bold;
           margin-bottom: 40px;
-          color: #4f46e5;
+          color: #1F2661;
         }
         .placement-grid {
           display: grid;
@@ -83,7 +84,7 @@ export default function PlacementShowcase() {
         }
         .company-name {
           font-size: 1rem;
-          color: #2563eb;
+          color: #1F2661;
           font-weight: 500;
           margin-bottom: 8px;
         }
@@ -99,7 +100,7 @@ export default function PlacementShowcase() {
       `}</style>
 
       <section className="placement-section">
-        <h2 className="placement-heading">Our Proud Placements</h2>
+        <h2 className="main-headline">Our Proud Placements</h2>
         <div className="placement-grid">
           {placements.map((p, index) => (
             <div key={index} className="placement-card">
