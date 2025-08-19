@@ -8,6 +8,9 @@ import EnquiryForm from '../Components/EnquiryForm';
 import Course from '../Pages/Course';
 import CourseDetail from '../Pages/CourseDetail';
 import Gallery from '../Pages/Gallery';
+import Placement from '../Pages/Placement';
+import ClientProjects from '../Pages/Projects/ClientProjects';
+import ProjectDetailsPage from '../Pages/Projects/ProjectDetailsPage';
 
 const AppRoutes = () => {
   return (
@@ -20,7 +23,9 @@ const AppRoutes = () => {
          <Route path='/course' element={<Course />} />
          <Route path='/course/:id' element={<CourseDetail />} />
         <Route path='/contact' element={<About />} />
-       
+        <Route path='/placement' element={<Placement />} />
+        <Route path='/projects/:tech' element={<ClientProjects />} />
+        <Route path='/project/details/:id' element={<ProjectDetailsPage />} />
       </Routes>
       <Footer/>
       <Chatbot/>

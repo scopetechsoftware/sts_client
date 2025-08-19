@@ -1,33 +1,31 @@
-import React from "react";
-import augustin from '../Assets/agustin.png';
-import sankar from '../Assets/sankar manoj.png';
-import shruti from '../Assets/shruthika.png';
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { API } from "../Api"; // your API constant
 
 export default function PlacementShowcase() {
-  const placements = [
-    {
-      name: "Agustin Durai J",
-      role: "Junior Developer",
-      company: "Strategic Industry Solutions",
-      lpa: "5",
-      photo: augustin,
-    },
-    {
-      name: "Sankar Manoj",
-      role: "Accentuate",
-      company: "TCS",
-      lpa: "2.35",
-      photo:sankar,
-    },
-    {
-      name: "Vignesh R",
-      role: "Android Developer",
-      company: "Info career private limited",
-      lpa: "1.92",
-      photo:shruti,
-    },
-  ];
+  const [placements, setPlacements] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const getPlacements = async () => {
+      try {
+        const res = await axios.get(`${API}/api/placements`);
+        setPlacements(res.data);
+      } catch (err) {
+        console.error("Error fetching placements:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getPlacements();
+  }, []);
+
+  // Helper function to build full image URL
+  const getImageUrl = (file) => {
+    if (!file) return "https://via.placeholder.com/300"; // fallback
+    return `${API}/uploads/${file}`;
+  };
 
   return (
     <>
@@ -102,21 +100,38 @@ export default function PlacementShowcase() {
       <section className="placement-section">
         <h2 className="main-headline">Our Proud Placements</h2>
         <div className="placement-grid">
-          {placements.map((p, index) => (
-            <div key={index} className="placement-card">
-              <img
-                src={p.photo}
-                alt={p.name}
-                className="placement-photo"
-              />
-              <div className="placement-content">
-                <h3 className="student-name">{p.name}</h3>
-                <p className="student-role">{p.role}</p>
-                <p className="company-name">{p.company}</p>
-                <span className="lpa-badge">{p.lpa} LPA</span>
-              </div>
-            </div>
-          ))}
+          {loading ? (
+            <p>Loading placements...</p>
+          ) : placements.length === 0 ? (
+            <p>No placements found.</p>
+          ) : (
+            placements.map((p, index) => {
+              const student = p.student;
+              const company = p.company;
+
+              return (
+                <div key={p._id} className="placement-card">
+                  <img
+                    src={
+                      student
+                        ? getImageUrl(student.studentImage)
+                        : getImageUrl(company.companyImage)
+                    }
+                    alt={student ? student.studentName : company.companyName}
+                    className="placement-photo"
+                  />
+                  <div className="placement-content">
+                    <h3 className="student-name">
+                      {student ? student.studentName : company.companyName}
+                    </h3>
+                    <p className="student-role">{p.jobRole}</p>
+                    <p className="company-name">{company.companyName}</p>
+                    <span className="lpa-badge">{p.package}</span>
+                  </div>
+                </div>
+              );
+            })
+          )}
         </div>
       </section>
     </>
