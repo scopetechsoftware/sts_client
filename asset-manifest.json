@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sts_client/static/css/main.39054649.css",
-    "main.js": "/sts_client/static/js/main.97b6bd51.js",
+    "main.css": "/sts_client/static/css/main.5750e74c.css",
+    "main.js": "/sts_client/static/js/main.411798e9.js",
     "static/media/Unconfirmed 361160.png": "/sts_client/static/media/Unconfirmed 361160.e1d3b71833fb6c23ba09.png",
     "static/media/first bage.png": "/sts_client/static/media/first bage.9aa4a61a0102755f7c52.png",
     "static/media/placement.png": "/sts_client/static/media/placement.7ced301f4310f2bcece1.png",
@@ -32,11 +32,11 @@
     "static/media/narmatha narayanan.png": "/sts_client/static/media/narmatha narayanan.492379fa881487bb2f14.png",
     "static/media/review 1.png": "/sts_client/static/media/review 1.1b1f18cab32b439d0f51.png",
     "index.html": "/sts_client/index.html",
-    "main.39054649.css.map": "/sts_client/static/css/main.39054649.css.map",
-    "main.97b6bd51.js.map": "/sts_client/static/js/main.97b6bd51.js.map"
+    "main.5750e74c.css.map": "/sts_client/static/css/main.5750e74c.css.map",
+    "main.411798e9.js.map": "/sts_client/static/js/main.411798e9.js.map"
   },
   "entrypoints": [
-    "static/css/main.39054649.css",
-    "static/js/main.97b6bd51.js"
+    "static/css/main.5750e74c.css",
+    "static/js/main.411798e9.js"
   ]
 }
