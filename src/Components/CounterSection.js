@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import co from '../Assets/comp.png'
+import { FaUserGraduate, FaBriefcase, FaGlobe, FaMedal } from "react-icons/fa";
+
 const statsData = [
-  { label: "Projects", value: 2000, icon: "📝" }, 
-  { label: "Graduates", value: 15000, icon: "🎓" },
-  { label: "Countries Reached", value: 35, icon: "🌍" },
-  { label: "Years of Experience", value: 15, icon: "📜" },
+  { label: "Students", value: 2000, icon: <FaUserGraduate size={28} color="#b637d5ff" /> },
+  { label: "Placements", value: 1500, icon: <FaBriefcase size={28} color="#e3e638ff" /> },
+  { label: "Branches", value: 2, icon: <FaGlobe size={28} color="#18e1ecff" /> },
+  { label: "Years of Experience", value: 4, icon: <FaMedal size={28} color="#f59e0b" /> },
 ];
 
 export default function CounterSection() {
@@ -52,7 +54,7 @@ export default function CounterSection() {
           margin: 20px;
         }
         .ca-icon {
-          font-size: 40px;
+          font-size: 45px;
           margin-bottom: 15px;
           display: block;
         }
@@ -69,7 +71,7 @@ export default function CounterSection() {
         {statsData.map((stat, index) => (
           <div key={index} className="ca-stat">
             <span className="ca-icon">{stat.icon}</span>
-            <div className="ca-number">{counts[index]}</div>
+            <div className="ca-number">{counts[index]} +</div>
             <div className="ca-label">{stat.label}</div>
           </div>
         ))}

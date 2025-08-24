@@ -1601,15 +1601,19 @@ margin-bottom: 20px;
 
 
 .cs-course-section {
-  padding: 20px 10px;
+  padding: 5% 8%;
 }
 
 .cs-course-section h2 {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
   text-align: center;
-  color: #333;
+  color: #1F2661;
+  background: linear-gradient(rgb(254, 252, 252), white);
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  border-radius: 6px;
 }
 
 .cs-course-grid {
@@ -1799,4 +1803,381 @@ margin-bottom: 20px;
   100% {
     opacity: 1;
   }
+}
+
+/* src/styles/projects.css */
+.cad-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  flex-wrap: wrap; /* allows sidebar & content to wrap on small screens */
+}
+
+/* Sidebar */
+.ca-sidebar {
+  width: 220px;
+  background-color: #e5ebf4;
+  color: #1a1919;
+  padding: 20px;
+  margin: 15px;
+  min-height: 50vh;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.ca-sidebar-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.ca-category-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ca-category-item {
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.ca-category-item:hover,
+.ca-category-item.ca-active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+/* Main content */
+.ca-main {
+  flex: 1;
+  padding: 30px;
+}
+
+.ca-main-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #1F2661;
+  text-transform: uppercase;
+}
+
+.ca-default-content {
+  margin-bottom: 20px;
+}
+
+.ca-content-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.ca-content-description {
+  font-size: 1rem;
+  color: #374151;
+}
+
+/* Project Grid */
+.ca-project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.ca-project-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ca-project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.ca-project-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.ca-project-code {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.ca-project-tech,
+.ca-project-category {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.ca-view-btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.ca-view-btn a {
+  color: white;
+  text-decoration: none;
+}
+
+.ca-view-btn:hover {
+  background-color: #2563eb;
+}
+
+.ca-no-projects {
+  text-align: center;
+  padding: 40px;
+  background-color: #f3f4f6;
+  border-radius: 10px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+  .cad-container {
+    flex-direction: column; /* Sidebar on top for tablets */
+  }
+
+  .ca-sidebar {
+    width: 100%;
+    margin: 10px 0;
+    min-height: auto;
+    text-align: center;
+  }
+
+  .ca-main {
+    padding: 20px;
+  }
+
+  .ca-project-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .ca-sidebar-title {
+    font-size: 1.2rem;
+  }
+
+  .ca-category-item {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+
+  .ca-main-title {
+    font-size: 1.2em;
+  }
+
+  .ca-content-title {
+    font-size: 1.3rem;
+  }
+
+  .ca-project-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+}
+
+/* consultancy */
+.cs-container {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Header */
+.cs-header {
+  background: #1F2661;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+.cs-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.cs-subtitle {
+  font-size: 1rem;
+  max-width: 650px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Sections */
+.cs-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+.cs-form-heading {
+text-align: center;
+    background: #1F2661;
+    font-size: 1.1rem;
+    padding: 10px 0px;
+    font-weight: 600;
+    color: #f1f1f1;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Job Cards */
+.cs-jobs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 25px 0;
+}
+.cs-job-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+.cs-job-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Buttons */
+.cs-btn, .cs-btn-outline {
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.cs-btn {
+  background: #1F2661;
+  color: white;
+  padding: 12px 26px;
+  border: none;
+}
+.cs-btn:hover {
+  background: #2a347a;
+}
+.cs-btn-outline {
+  background: transparent;
+  border: 2px solid #1F2661;
+  color: #1F2661;
+  padding: 10px 22px;
+}
+.cs-btn-outline:hover {
+  background: #1F2661;
+  color: white;
+}
+
+/* Modal */
+.cs-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+  z-index: 999;
+}
+.cs-modal-content {
+  background: white;
+  padding: 25px 20px 80px; /* extra padding for sticky footer */
+  border-radius: 12px;
+  width: 90%;
+  max-width: 650px;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease-out;
+  position: relative;
+}
+
+/* Form */
+.cs-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+.cs-form label {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.cs-form input,
+.cs-form select,
+.cs-form textarea {
+      width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+.cs-error {
+  color: #d9534f;
+  font-size: 0.8rem;
+  margin-top: -6px;
+}
+
+/* Sticky Actions */
+.cs-form-actions {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  padding: 12px 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid #eee;
+}
+
+.cs-modal-content {
+  background: white;
+  padding: 0; /* remove big padding, handle inside sections */
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh; /* important */
+  display: flex;
+  flex-direction: column; /* separates scroll area and footer */
+}
+
+/* Scroll only the form body */
+.scroll-cs {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 30px;
+}
+
+/* Footer always visible */
+.cs-form-actions {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }

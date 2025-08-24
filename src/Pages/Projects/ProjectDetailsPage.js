@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { API } from "../../Api";
 
 const ProjectDetailsPage = () => {
   const { id } = useParams();
@@ -25,7 +26,7 @@ const ProjectDetailsPage = () => {
   useEffect(() => {
     const fetchProject = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/projects/${id}`);
+        const res = await axios.get(`${API}/api/projects/${id}`);
         setProject(res.data);
       } catch (err) {
         console.error("Error fetching project:", err);

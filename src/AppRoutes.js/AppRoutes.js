@@ -11,6 +11,8 @@ import Gallery from '../Pages/Gallery';
 import Placement from '../Pages/Placement';
 import ClientProjects from '../Pages/Projects/ClientProjects';
 import ProjectDetailsPage from '../Pages/Projects/ProjectDetailsPage';
+import ProjectHome from '../Pages/Projects/ProjectHome';
+import Consultancy from '../Pages/Consultancy';
 
 const AppRoutes = () => {
   return (
@@ -25,6 +27,8 @@ const AppRoutes = () => {
         <Route path='/contact' element={<About />} />
         <Route path='/placement' element={<Placement />} />
         <Route path='/projects/:tech' element={<ClientProjects />} />
+        <Route path='/project' element={<ProjectHome />} />
+        <Route path='/consultancy' element={<Consultancy />} />
         <Route path='/project/details/:id' element={<ProjectDetailsPage />} />
       </Routes>
       <Footer/>

@@ -43,8 +43,8 @@ const [scrolled, setScrolled] = useState(false);
           <li className="nav-item"><Link to="/career" className="nav-link">Career</Link></li>
          
 
-          <li className="nav-item dropdown">
-            <span className="nav-link">Projects ▾</span>
+          <li className="nav-item dropdown ">
+            <Link to={'/project'} className="nav-link"><span className="nav-link">Projects ▾</span></Link>
             <div className="dropdown-content">
               <Link to="/projects/Python">Python Projects</Link>
               <Link to="/projects/Java">Java Projects</Link>
