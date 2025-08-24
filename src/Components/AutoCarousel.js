@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
+import deal from '../Assets/first bage.png';
+import placement from "../Assets/placement.png";
+import comp from "../Assets/comp.png"
+
+
+
 
 const AutoCarousel = () => {
   const slides = [
     {
-      image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg",
+      image: deal,
       heading: "IT Training",
       content: "Comprehensive training programs in cutting-edge technologies including Full Stack Development, React JS, VLSI Design, and Tally ERP. Transform your career with industry-relevant skills and hands-on experience.",
       subheading: "Professional Skill Development",
       stats: "500+ Students Trained",
-      color: "#3b82f6"
+      color: "#27cdcbff"
     },
     {
-      image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
+      image: placement,
       heading: "Placement",
       content: "End-to-end placement assistance with personalized resume building, comprehensive interview preparation, and direct connections with top-tier companies to secure your dream career opportunity.",
       subheading: "Career Opportunities",
@@ -28,12 +34,12 @@ const AutoCarousel = () => {
       color: "#f59e0b"
     },
     {
-      image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg",
+      image: comp,
       heading: "Project",
       content: "Custom project development services from initial concept to final deployment including responsive web applications, mobile apps, and enterprise-grade software solutions.",
       subheading: "Custom Development",
       stats: "100+ Happy Clients",
-      color: "#ef4444"
+      color: "#202ae2ff"
     }
   ];
 

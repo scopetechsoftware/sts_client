@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import "../Projects/ClientProjects.css";
 import { Link } from "react-router-dom";
+import { API } from "../../Api";
 
 const ClientProjects = () => {
   const { tech } = useParams();
@@ -16,7 +17,7 @@ const ClientProjects = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/projects");
+        const res = await axios.get(`${API}/api/projects`);
 
         // Filter by technology
         let filtered = res.data.filter(

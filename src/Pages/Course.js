@@ -3,62 +3,21 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { API } from "../Api";
+import CardLoader from "../Components/Loader/CardLoader";
 
+  
 export default function Course() {
   const [courses, setCourse] = useState([]);
-
-  const styles = {
-    container: { padding: "20px" },
-    grid: {
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-      gap: "20px",
-    },
-    card: {
-      position: "relative",
-      background: "#fff",
-      borderRadius: "10px",
-      boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-      overflow: "hidden",
-    },
-    ribbon: {
-      position: "absolute",
-      top: "10px",
-      right: "-30px",
-      background: "linear-gradient(135deg, #ff4e50, #f9d423)",
-      color: "#fff",
-      padding: "5px 40px",
-      transform: "rotate(45deg)",
-      fontSize: "12px",
-      fontWeight: "bold",
-      boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-    },
-    img: { width: "100%", height: "180px", objectFit: "cover" },
-    content: { padding: "15px" },
-    title: { fontSize: "18px", fontWeight: "bold" },
-    desc: { fontSize: "14px", margin: "10px 0" },
-    link: {
-      display: "inline-block",
-      background: "linear-gradient(135deg, #6a11cb, #2575fc)",
-      color: "#fff",
-      padding: "8px 14px",
-      borderRadius: "5px",
-      textDecoration: "none",
-    },
-    offerText: {
-      marginTop: "8px",
-      fontSize: "13px",
-      fontWeight: "bold",
-      color: "#e63946",
-    },
-  };
-
+const [loading, setLoading] = useState(true);
   const fetchCourse = async () => {
     try {
       const res = await axios.get(`${API}/api/courses`);
       setCourse(res.data);
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(true);
+
     }
   };
 
@@ -66,44 +25,35 @@ export default function Course() {
     fetchCourse();
   }, []);
 
-  // Filter courses by type (make sure your backend sends `type` field)
   const professionalCourses = courses.filter((c) => c.type === "Professional");
   const basicCourses = courses.filter((c) => c.type === "Basic");
   const businessCourses = courses.filter((c) => c.type === "Advance");
 
-  // helper to render a section
   const renderCourseSection = (title, courseList) =>
     courseList.length > 0 && (
-      <>
-        <h2 className="new-headline">{title}</h2>
-        <div style={styles.container}>
-          <div style={styles.grid} >
-            {[...courseList].reverse().map((course) => (
-              <div key={course._id} style={styles.card} className="course-card">
-                {course.offer && <div style={styles.ribbon}>OFFER</div>}
-
-                <img
-                  src={`${API}/uploads/${course.image}`}
-                  alt={course.courseName}
-                  style={styles.img}
-                />
-                <div style={styles.content}>
-                  <div style={styles.title}>{course.courseName}</div>
-                  <div style={styles.desc}>{course.prerequire}</div>
-
-                  {course.offer && (
-                    <div style={styles.offerText}>{course.offer}</div>
-                  )}
-
-                  <Link to={`/course/${course._id}`} style={styles.link}>
-                    View
-                  </Link>
-                </div>
+      <div className="cs-course-section loader-smooth">
+        <h2 className="cs-course-title">{title}</h2>
+        <div className="cs-course-grid">
+          {[...courseList].reverse().map((course) => (
+            <div key={course._id} className="cs-course-card">
+              {course.offer && <div className="cs-ribbon">OFFER</div>}
+              <img
+                src={`${API}/uploads/${course.image}`}
+                alt={course.courseName}
+                className="cs-course-image"
+              />
+              <div className="cs-course-content">
+                <div className="cs-course-name">{course.courseName}</div>
+                <div className="cs-course-desc">{course.prerequire}</div>
+                {course.offer && <div className="cs-offer-text">{course.offer}</div>}
+                <Link to={`/course/${course._id}`} className="cs-course-link">
+                  View
+                </Link>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-      </>
+      </div>
     );
 
   return (
@@ -114,9 +64,32 @@ export default function Course() {
         </div>
       </div>
 
-      {renderCourseSection("Professional Courses", professionalCourses)}
-      {renderCourseSection("Basic Courses", basicCourses)}
-      {renderCourseSection("Business Courses", businessCourses)}
+      {loading ? (
+  <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap',padding: '30px' }}>
+    <CardLoader /><CardLoader /><CardLoader /><CardLoader />
+  </div>
+) : (
+  renderCourseSection("Professional Courses", professionalCourses)
+)}
+
+  {loading ? (
+  <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' ,padding: '30px'}}>
+    <CardLoader /><CardLoader /><CardLoader /><CardLoader />
+  </div>
+) : (
+ renderCourseSection("Basic Courses", basicCourses)
+)}
+
+  {loading ? (
+  <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' , padding: '30px'}}>
+    <CardLoader /><CardLoader /><CardLoader /><CardLoader />
+  </div>
+) : (
+renderCourseSection("Business Courses", businessCourses) 
+)}
+
+   
+      
     </div>
   );
 }
